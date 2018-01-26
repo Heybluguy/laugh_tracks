@@ -1,0 +1,14 @@
+
+
+
+<h3>Comedians</h3>
+Average age: <%= @comedians.average(:age).to_i %>
+<% @comedians.each do |comedian| %>
+  <p>
+    Comedian: <%= comedian.name %><br>
+    Age: <%= comedian.age %><br>
+    Specials: <% comedian.specials.each do |special| %>
+      <%= special.name %>
+    <% end %>
+  </p>
+<% end %>
